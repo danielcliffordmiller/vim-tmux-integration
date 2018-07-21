@@ -3,7 +3,7 @@ function! s:function(name) abort
 endfunction
 
 function! s:IsUsingTmux()
-  call system('[ "$TERM" = "screen" ] && [ -n "$TMUX" ]')
+  call system('[[ $TERM =~ ^screen ]] && [ -n "$TMUX" ]')
   return !v:shell_error
 endfunction
 
